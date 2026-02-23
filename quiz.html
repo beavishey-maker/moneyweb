@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>あなたのお金タイプ診断｜60秒FPクイズ | money web</title>
+  <meta name="description" content="10問のクイズであなたのお金タイプ（心配性な管理タイプ・直感的おおらかタイプ・バランス重視タイプ・成長志向チャレンジタイプ）を診断。FP渡辺かなこが家計パターンに合ったアドバイスをお伝えします。">
+  <link rel="canonical" href="https://kanako-moneyadvisor.com/quiz.html">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://kanako-moneyadvisor.com/quiz.html">
+  <meta property="og:title"       content="あなたのお金タイプ診断｜money web">
+  <meta property="og:description" content="60秒でわかる！FPクイズで自分の家計パターンを診断しましょう。">
+  <meta property="og:image"       content="https://kanako-moneyadvisor.com/images/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-logo">
+      <span class="site-logo__name">money web</span>
+      <span class="site-logo__sub">FP &amp; Career Consultant</span>
+    </a>
+    <nav class="site-nav" aria-label="グローバルナビ">
+      <a href="index.html"    class="site-nav__link">ホーム</a>
+      <a href="about.html"   class="site-nav__link">プロフィール</a>
+      <a href="services.html" class="site-nav__link">サービス</a>
+      <a href="results.html" class="site-nav__link">お客様の声</a>
+      <a href="blog.html"    class="site-nav__link">ブログ</a>
+      <a href="contact.html" class="site-nav__link">お問い合わせ</a>
+      <a href="contact.html" class="btn btn-primary btn--sm nav-cta">無料相談を予約する</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" aria-label="モバイルナビ">
+  <a href="index.html"    class="mobile-menu__link">ホーム</a>
+  <a href="about.html"   class="mobile-menu__link">プロフィール</a>
+  <a href="services.html" class="mobile-menu__link">サービス</a>
+  <a href="results.html" class="mobile-menu__link">お客様の声</a>
+  <a href="blog.html"    class="mobile-menu__link">ブログ</a>
+  <a href="contact.html" class="mobile-menu__link">お問い合わせ</a>
+  <div class="mobile-menu__cta">
+    <a href="contact.html" class="btn btn-primary btn--full">無料相談を予約する</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="page-hero" style="padding-bottom:40px;">
+    <span class="page-hero__eyebrow">📝 Quiz</span>
+    <h1 class="page-hero__title">あなたのお金タイプは？</h1>
+    <p class="page-hero__desc">10問のクイズで自分の家計パターンを診断しましょう。所要時間：約60秒</p>
+  </div>
+
+  <section class="section" style="padding-top:40px;" aria-label="クイズ">
+    <div class="quiz-wrap">
+
+      <!-- Intro screen -->
+      <div id="quizIntro" style="text-align:center;">
+        <div style="font-size:3.5rem;margin-bottom:20px;" aria-hidden="true">🌿</div>
+        <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:16px;">診断を始める前に</h2>
+        <p style="color:var(--color-text-sub);line-height:1.9;margin-bottom:28px;font-size:.95rem;">
+          全10問、直感的に答えてください。<br>
+          正解・不正解はありません。<br>
+          あなたの今の正直な気持ちを選んでください。
+        </p>
+        <button class="btn btn-primary btn--lg" onclick="startQuiz()" id="startBtn">
+          <i class="fa-solid fa-play" aria-hidden="true"></i>
+          診断スタート
+        </button>
+      </div>
+
+      <!-- Quiz screen -->
+      <div id="quizScreen" style="display:none;" aria-live="polite">
+        <div class="quiz-progress-bar-wrap" role="progressbar" aria-label="進捗" aria-valuemin="0" aria-valuemax="10" id="progressBarWrap">
+          <div class="quiz-progress-bar" id="progressBar" style="width:0%"></div>
+        </div>
+        <p class="quiz-progress-text" id="progressText">1 / 10</p>
+        <div id="questionCard"></div>
+      </div>
+
+      <!-- Result screen -->
+      <div id="resultScreen" style="display:none;" aria-live="polite">
+        <div class="result-card" id="resultCard"></div>
+        <div style="text-align:center;margin-top:24px;">
+          <button class="btn btn-outline" onclick="resetQuiz()">
+            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+            もう一度診断する
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__logo-name">money web</div>
+      <div class="footer__logo-sub">FP &amp; Career Consultant</div>
+      <p class="footer__brand-desc">渡辺かなこ（FP＆国家資格キャリアコンサルタント）</p>
+    </div>
+    <nav aria-label="サービス">
+      <p class="footer__col-title">Services</p>
+      <ul class="footer__links">
+        <li><a href="services.html#consultation">個別相談</a></li>
+        <li><a href="services.html#course">家計整理アドバイザー講座</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="コンテンツ">
+      <p class="footer__col-title">Contents</p>
+      <ul class="footer__links">
+        <li><a href="quiz.html">お金タイプ診断</a></li>
+        <li><a href="glossary.html">FP用語集</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="その他">
+      <p class="footer__col-title">Legal</p>
+      <ul class="footer__links">
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="legal.html">特定商取引法</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer__bottom">
+    <span>&copy; 2024 money web / 渡辺かなこ. All rights reserved.</span>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="ページトップへ">
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+</button>
+
+<script src="js/main.js"></script>
+<script>
+/* ===== QUIZ DATA ===== */
+const questions = [
+  {
+    q: "月末に通帳を見たとき、正直どう感じますか？",
+    opts: [
+      { text: "思ったより減っていて、ため息が出る",                 s: {A:3,B:1,C:2,D:1} },
+      { text: "毎月ほぼ同じ残高で、まあこんなもの",                 s: {A:1,B:3,C:2,D:1} },
+      { text: "目標額に少し届かなくて悔しい",                       s: {A:2,B:1,C:3,D:2} },
+      { text: "投資の評価額と合わせて確認する習慣がある",           s: {A:1,B:1,C:2,D:4} }
+    ]
+  },
+  {
+    q: "「老後2000万円問題」のニュースを見たとき、最初に思ったことは？",
+    opts: [
+      { text: "絶対無理…と暗い気持ちになった",                     s: {A:4,B:1,C:1,D:1} },
+      { text: "なんとかなるでしょ、と思った",                       s: {A:1,B:4,C:1,D:1} },
+      { text: "自分はどうなんだろうと計算してみた",                 s: {A:2,B:1,C:3,D:2} },
+      { text: "NISAやiDeCoで対策しようと思った",                   s: {A:1,B:1,C:2,D:4} }
+    ]
+  },
+  {
+    q: "「家計簿」と聞いて、一番近いのは？",
+    opts: [
+      { text: "始めても三日坊主で終わる…",                         s: {A:2,B:3,C:1,D:1} },
+      { text: "つけているけど、残高が合わない",                     s: {A:3,B:2,C:1,D:1} },
+      { text: "アプリで自動化して、毎月チェック",                   s: {A:1,B:1,C:4,D:2} },
+      { text: "収支より「投資配分」の管理が気になる",               s: {A:1,B:1,C:2,D:4} }
+    ]
+  },
+  {
+    q: "今の働き方について、率直に言うと？",
+    opts: [
+      { text: "扶養内で続けるか迷っているが、一歩が踏み出せない",   s: {A:3,B:2,C:2,D:1} },
+      { text: "まあ今の状況に満足している",                         s: {A:1,B:4,C:2,D:1} },
+      { text: "もう少し収入を増やす方法を模索中",                   s: {A:1,B:1,C:3,D:3} },
+      { text: "副業や転職を本格的に検討している",                   s: {A:1,B:1,C:1,D:4} }
+    ]
+  },
+  {
+    q: "ポイ活や節約情報に対して、正直なところは？",
+    opts: [
+      { text: "やらなきゃと思いつつ、情報が多すぎて疲れた",         s: {A:3,B:2,C:1,D:1} },
+      { text: "面倒くさいのでほとんどやっていない",                 s: {A:1,B:4,C:1,D:1} },
+      { text: "やるべきことを絞って、仕組み化している",             s: {A:1,B:1,C:4,D:2} },
+      { text: "そういう小さな節約より、収入アップに集中したい",     s: {A:1,B:1,C:1,D:4} }
+    ]
+  },
+  {
+    q: "家族や友人との食事・旅行に対して感じることは？",
+    opts: [
+      { text: "楽しいけど、使いすぎたかなと罪悪感がある",           s: {A:4,B:1,C:1,D:1} },
+      { text: "特にお金のことは考えずに楽しむ",                     s: {A:1,B:4,C:1,D:1} },
+      { text: "予算を決めて、その範囲で思いきり楽しむ",             s: {A:1,B:1,C:4,D:2} },
+      { text: "自己投資（スキルアップ等）にもお金を使いたい",       s: {A:1,B:1,C:2,D:4} }
+    ]
+  },
+  {
+    q: "「教育費」についてどう向き合っていますか？",
+    opts: [
+      { text: "大学費用を考えると、夜も眠れないほど不安",           s: {A:4,B:1,C:2,D:1} },
+      { text: "何とかなると思っているが、具体的には考えていない",   s: {A:1,B:4,C:1,D:1} },
+      { text: "学費の見積もりを出して、貯蓄計画を立てている",       s: {A:1,B:1,C:4,D:2} },
+      { text: "奨学金や教育ローンも含めて柔軟に考えている",         s: {A:1,B:2,C:2,D:4} }
+    ]
+  },
+  {
+    q: "自分の「強み」や「得意なこと」についてどう思う？",
+    opts: [
+      { text: "「私には特別なスキルがない」とよく思う",             s: {A:3,B:2,C:2,D:1} },
+      { text: "深く考えたことがない",                               s: {A:1,B:4,C:1,D:1} },
+      { text: "今の仕事経験を棚卸しして、強みを整理したい",         s: {A:1,B:1,C:3,D:3} },
+      { text: "自分の強みを活かした副業や転職を考えている",         s: {A:1,B:1,C:2,D:4} }
+    ]
+  },
+  {
+    q: "5年後の自分について、イメージしてみると？",
+    opts: [
+      { text: "考えると不安になるので、あまり考えたくない",         s: {A:4,B:2,C:1,D:1} },
+      { text: "今と変わらないといいな、と思う",                     s: {A:1,B:4,C:2,D:1} },
+      { text: "家計を整えて、もう少し余裕のある生活をしたい",       s: {A:2,B:1,C:4,D:2} },
+      { text: "新しいキャリアに挑戦して、やりがいを持って働きたい", s: {A:1,B:1,C:2,D:4} }
+    ]
+  },
+  {
+    q: "FPやキャリアコンサルタントへの相談について、正直なところは？",
+    opts: [
+      { text: "怒られそうで怖い / 恥ずかしい気がする",             s: {A:3,B:2,C:1,D:1} },
+      { text: "商品を売りつけられそうで警戒している",               s: {A:2,B:3,C:2,D:1} },
+      { text: "一度、専門家に客観的に見てもらいたいと思っている",   s: {A:2,B:1,C:4,D:2} },
+      { text: "相談して、具体的なアクションプランを作りたい",       s: {A:1,B:1,C:2,D:4} }
+    ]
+  }
+];
+
+const results = {
+  A: {
+    type: "心配性な管理タイプ",
+    emoji: "🌙",
+    headline: "将来への不安が強く、でも動き方がわからないあなたへ",
+    desc: "老後資金や教育費への不安が常に頭のどこかにある、真剣に家族のことを考えている方です。お金を使うことへの罪悪感を感じることもあるかもしれません。まずは「見えない不安」を数字で可視化することが、大きな安心への第一歩になります。",
+    advice: "まず現状の家計を「見える化」するところから始めましょう。不安の正体がはっきりすると、思ったよりずっと気持ちが楽になります。",
+    cta: "現状を一緒に整理しませんか？",
+    color: "#7A9E7E"
+  },
+  B: {
+    type: "直感的おおらかタイプ",
+    emoji: "☀️",
+    headline: "なんとかなると思いながらも、ふと気になることがあるあなたへ",
+    desc: "日々の生活を楽しむことが上手で、細かいことに振り回されない大らかさを持っています。ただ、具体的な老後資金の計算や家計の仕組みを一度もきちんと考えたことがないかもしれません。「なんとかなる」を「大丈夫の根拠がある」に変える機会かもしれません。",
+    advice: "一度だけ、ライフプランのシミュレーションをしてみませんか？根拠のある安心感は、これからの人生をもっと楽しくしてくれます。",
+    cta: "ライフプランを一緒に描いてみませんか？",
+    color: "#C17B5C"
+  },
+  C: {
+    type: "バランス重視の安定タイプ",
+    emoji: "🌿",
+    headline: "安定を大切にしながら、次のステップを探しているあなたへ",
+    desc: "家計管理の意識が高く、バランス良く物事を進めようとする安定感のある方です。仕組みを作ることが得意で、少しずつ着実に進んでいます。今後は「効率をさらに上げる方法」や「これまでの経験を活かした次のステップ」を考える段階かもしれません。",
+    advice: "家計の仕組みをさらに洗練させ、将来のキャリアとお金を統合的に考えることで、もう一段階上の安心感が手に入ります。",
+    cta: "次のステージへ、一緒に進みましょう",
+    color: "#7A9E7E"
+  },
+  D: {
+    type: "成長志向チャレンジタイプ",
+    emoji: "🚀",
+    headline: "キャリアとお金を連動させて、新しいステージに進みたいあなたへ",
+    desc: "現状に満足せず、常に成長を求める行動力のある方です。副業・転職・起業など、新しいキャリアへの挑戦も視野に入っているかもしれません。エネルギーと意欲はある。あとは「お金の安全網」を確認しながら、最短ルートで動くためのプランが必要な段階です。",
+    advice: "行動力は最大の武器。あとは「リスクを取りすぎないための家計設計」と「キャリアの方向性の明確化」を組み合わせれば、もっと速く、安全に前に進めます。",
+    cta: "一緒にアクションプランを作りませんか？",
+    color: "#C17B5C"
+  }
+};
+
+/* ===== QUIZ STATE ===== */
+let currentQ = 0;
+let scores   = { A: 0, B: 0, C: 0, D: 0 };
+const alphas = ['A', 'B', 'C', 'D'];
+
+/* ===== FUNCTIONS ===== */
+function startQuiz() {
+  document.getElementById('quizIntro').style.display  = 'none';
+  document.getElementById('quizScreen').style.display = 'block';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q    = questions[currentQ];
+  const pct  = Math.round((currentQ / questions.length) * 100);
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressBar').setAttribute('aria-valuenow', currentQ);
+  document.getElementById('progressText').textContent = `${currentQ + 1} / ${questions.length}`;
+
+  const optionsHTML = q.opts.map((opt, i) => `
+    <button class="quiz-option" onclick="selectAnswer(${i})" aria-label="${opt.text}">
+      <span class="quiz-option__alpha" aria-hidden="true">${alphas[i]}</span>
+      <span>${opt.text}</span>
+    </button>
+  `).join('');
+
+  document.getElementById('questionCard').innerHTML = `
+    <div class="quiz-q-card">
+      <p class="quiz-q-num">Q${currentQ + 1}</p>
+      <p class="quiz-q-text">${q.q}</p>
+      <div class="quiz-options" role="group" aria-label="選択肢">
+        ${optionsHTML}
+      </div>
+    </div>
+  `;
+}
+
+function selectAnswer(idx) {
+  const opt = questions[currentQ].opts[idx];
+  scores.A += opt.s.A;
+  scores.B += opt.s.B;
+  scores.C += opt.s.C;
+  scores.D += opt.s.D;
+
+  // Visual feedback
+  const btns = document.querySelectorAll('.quiz-option');
+  btns.forEach((b, i) => { if (i === idx) b.classList.add('is-selected'); b.disabled = true; });
+
+  setTimeout(() => {
+    currentQ++;
+    if (currentQ >= questions.length) {
+      showResult();
+    } else {
+      renderQuestion();
+    }
+  }, 400);
+}
+
+function getType() {
+  return Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+}
+
+function showResult() {
+  document.getElementById('quizScreen').style.display  = 'none';
+  document.getElementById('resultScreen').style.display = 'block';
+
+  const type = getType();
+  const r    = results[type];
+
+  // Update URL without reload
+  const url = new URL(location.href);
+  url.searchParams.set('result', type);
+  history.replaceState(null, '', url.toString());
+
+  const shareText = encodeURIComponent(`私のお金タイプは「${r.type}」でした！🌿 #moneyweb #お金タイプ診断`);
+  const shareUrl  = encodeURIComponent(location.href);
+
+  document.getElementById('resultCard').innerHTML = `
+    <div class="result-card__header" style="background:${r.color};">
+      <span class="result-card__emoji">${r.emoji}</span>
+      <p class="result-card__type-label">あなたのお金タイプ</p>
+      <p class="result-card__type">${r.type}</p>
+    </div>
+    <div class="result-card__body">
+      <h2 class="result-card__headline">${r.headline}</h2>
+      <p class="result-card__desc">${r.desc}</p>
+      <div class="result-card__advice-box">
+        <p><strong style="color:var(--color-accent-sub-dk);">💡 かなこからのアドバイス</strong><br><br>${r.advice}</p>
+      </div>
+      <div class="result-card__actions">
+        <a href="contact.html" class="btn btn-primary btn--lg">
+          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+          ${r.cta}
+        </a>
+        <a
+          href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+          aria-label="X（旧Twitter）でシェア"
+        >
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          結果をシェア
+        </a>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('resultScreen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetQuiz() {
+  currentQ = 0;
+  scores   = { A: 0, B: 0, C: 0, D: 0 };
+
+  const url = new URL(location.href);
+  url.searchParams.delete('result');
+  history.replaceState(null, '', url.toString());
+
+  document.getElementById('resultScreen').style.display = 'none';
+  document.getElementById('quizIntro').style.display    = 'block';
+}
+
+/* ===== URL param: jump to result ===== */
+(function () {
+  const param = new URLSearchParams(location.search).get('result');
+  if (param && results[param]) {
+    // Replay with dummy scores
+    scores[param] = 100;
+    document.getElementById('quizIntro').style.display  = 'none';
+    document.getElementById('quizScreen').style.display = 'none';
+    document.getElementById('resultScreen').style.display = 'block';
+    showResult();
+  }
+})();
+</script>
+</body>
+</html>

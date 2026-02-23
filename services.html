@@ -3,168 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サービス一覧｜個別相談・講座・セミナー | money web</title>
-  <meta name="description" content="渡辺かなこ（FP＆キャリアコンサルタント）のサービス一覧。個別相談（家計×キャリア）、家計整理アドバイザー2級講座、各種セミナー。初回無料相談受付中。">
-  <link rel="canonical" href="https://kanako-moneyadvisor.com/services.html">
-
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://kanako-moneyadvisor.com/services.html">
-  <meta property="og:title"       content="サービス一覧 | money web">
-  <meta property="og:description" content="FP＆キャリアコンサルタント 渡辺かなこのサービス。個別相談・家計整理講座・セミナー。">
-  <meta property="og:image"       content="https://kanako-moneyadvisor.com/images/og-image.png">
-
+  <title>個別相談・家計整理アドバイザー講座のご案内｜渡辺かなこ | money web</title>
+  <meta name="description" content="FP・キャリアコンサルタント渡辺かなこのサービス一覧。個別相談（初回無料）、家計整理アドバイザー2級講座、グループセミナー。">
+  <meta property="og:title" content="個別相談・家計整理アドバイザー講座のご案内｜渡辺かなこ | money web">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    .service-detail { scroll-margin-top: 90px; }
-
-    .service-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin: 28px 0;
-      counter-reset: flow-counter;
-    }
-
-    .service-flow__item {
-      display: flex;
-      gap: 20px;
-      padding: 0 0 32px;
-      position: relative;
-      counter-increment: flow-counter;
-    }
-
-    .service-flow__item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      left: 19px;
-      top: 44px;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--color-primary-lt), transparent);
-    }
-
-    .service-flow__num {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: var(--color-primary);
-      color: var(--color-text-inv);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: .9rem;
-      font-family: var(--font-sans);
-      position: relative;
-      z-index: 1;
-    }
-
-    .service-flow__content h4 {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      margin-bottom: 6px;
-      margin-top: 8px;
-    }
-
-    .service-flow__content p {
-      font-size: .875rem;
-      color: var(--color-text-lt);
-      line-height: 1.7;
-    }
-
-    .price-badge {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 6px;
-      background: linear-gradient(135deg, var(--color-primary-lt), var(--color-accent-lt));
-      border-radius: var(--radius-md);
-      padding: 16px 24px;
-      margin: 16px 0;
-    }
-
-    .price-badge__label {
-      font-size: .8rem;
-      color: var(--color-primary-dk);
-      font-weight: 500;
-    }
-
-    .price-badge__value {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--color-primary-dk);
-    }
-
-    .price-badge__note {
-      font-size: .75rem;
-      color: var(--color-text-lt);
-    }
-
-    .faq { margin-top: 16px; }
-
-    .faq__item {
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .faq__question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 0;
-      font-family: var(--font-serif);
-      font-size: .95rem;
-      cursor: pointer;
-      gap: 12px;
-      list-style: none;
-    }
-
-    .faq__question::marker,
-    .faq__question::-webkit-details-marker { display: none; }
-
-    .faq__question::after {
-      content: '\f078';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      font-size: .75rem;
-      color: var(--color-primary);
-      flex-shrink: 0;
-      transition: transform .3s ease;
-    }
-
-    details[open] .faq__question::after {
-      transform: rotate(180deg);
-    }
-
-    .faq__answer {
-      padding: 0 0 18px;
-      font-size: .9rem;
-      color: var(--color-text-lt);
-      line-height: 1.8;
-    }
-  </style>
 </head>
 <body>
 
-  <header class="site-header" role="banner">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="site-logo" aria-label="money web トップページへ">
-        <span class="site-logo__main">money web</span>
-        <span class="site-logo__sub">FP &amp; Career Consultant</span>
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__name">money web</span>
+        <span class="site-logo__sub">お金とキャリアの伴走プランナー</span>
       </a>
-      <nav class="site-nav" aria-label="グローバルナビゲーション">
-        <a href="index.html"    class="site-nav__link">ホーム</a>
-        <a href="about.html"   class="site-nav__link">プロフィール</a>
-        <a href="services.html" class="site-nav__link">サービス</a>
-        <a href="blog.html"    class="site-nav__link">ブログ</a>
-        <a href="contact.html" class="site-nav__link site-nav__cta btn btn--primary btn--sm">無料相談を予約する</a>
+      <nav class="site-nav" aria-label="グローバルナビ">
+        <a href="index.html" class="site-nav__link">ホーム</a>
+        <a href="about.html" class="site-nav__link">プロフィール</a>
+        <a href="services.html" class="site-nav__link site-nav__link--active">サービス</a>
+        <a href="results.html" class="site-nav__link">実績・声</a>
+        <a href="blog.html" class="site-nav__link">ブログ</a>
+        <a href="contact.html" class="site-nav__link site-nav__link--cta">お問い合わせ</a>
       </nav>
-      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false">
+      <button class="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -172,374 +38,369 @@
     </div>
   </header>
 
-  <nav class="mobile-menu" aria-label="モバイルナビゲーション">
-    <a href="index.html"    class="mobile-menu__link">ホーム</a>
-    <a href="about.html"   class="mobile-menu__link">プロフィール</a>
-    <a href="services.html" class="mobile-menu__link">サービス</a>
-    <a href="blog.html"    class="mobile-menu__link">ブログ</a>
-    <a href="contact.html" class="mobile-menu__link">お問い合わせ</a>
-  </nav>
-
-  <main id="main-content">
-
-    <div class="page-header">
-      <span class="page-header__eyebrow">Services</span>
-      <h1 class="page-header__title">サービス一覧</h1>
-      <p class="page-header__desc">あなたの状況に合ったサポートをご提供します</p>
-    </div>
-
-    <nav class="breadcrumb" aria-label="パンくずリスト">
-      <a href="index.html">ホーム</a>
-      <span class="breadcrumb__sep" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
-      <span aria-current="page">サービス</span>
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="モバイルナビ">
+      <a href="index.html" class="mobile-menu__link">ホーム</a>
+      <a href="about.html" class="mobile-menu__link">プロフィール</a>
+      <a href="services.html" class="mobile-menu__link">サービス</a>
+      <a href="results.html" class="mobile-menu__link">実績・声</a>
+      <a href="blog.html" class="mobile-menu__link">ブログ</a>
+      <a href="contact.html" class="mobile-menu__cta">お問い合わせ</a>
     </nav>
+  </div>
 
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <p class="page-hero__eyebrow">Services</p>
+      <h1 class="page-hero__title">サービス一覧</h1>
+      <p class="page-hero__desc">あなたの状況に合ったサポートをお選びください。</p>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <div class="container">
+        <a href="index.html">ホーム</a>
+        <span class="breadcrumb__sep" aria-hidden="true">›</span>
+        <span aria-current="page">サービス一覧</span>
+      </div>
+    </nav>
     <!-- SERVICE NAV -->
-    <section class="section" style="padding-block:32px;" aria-label="サービス選択">
+    <section class="section section--sub">
       <div class="container">
-        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-          <a href="#consultation" class="btn btn--primary btn--sm">
-            <i class="fa-solid fa-comments" aria-hidden="true"></i> 個別相談
-          </a>
-          <a href="#course" class="btn btn--accent btn--sm">
-            <i class="fa-solid fa-book-open" aria-hidden="true"></i> 家計整理アドバイザー講座
-          </a>
-          <a href="#seminar" class="btn btn--outline-dark btn--sm">
-            <i class="fa-solid fa-users" aria-hidden="true"></i> 各種セミナー
-          </a>
+        <div class="service-nav fade-in">
+          <a href="#consultation" class="btn btn-outline">&#x1F4AC; 個別相談</a>
+          <a href="#course" class="btn btn-outline">&#x1F4DA; 家計整理アドバイザー講座</a>
+          <a href="#seminar" class="btn btn-outline">&#x1F465; グループセミナー</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== SERVICE 1: CONSULTATION ===== -->
-    <section class="section section--alt" id="consultation" aria-labelledby="consult-heading">
+    <!-- SERVICE 1: CONSULTATION -->
+    <section class="section" id="consultation">
       <div class="container">
-        <div class="service-detail fade-up">
-          <div class="service-detail__header">
-            <div class="service-detail__icon" aria-hidden="true">
-              <i class="fa-solid fa-comments"></i>
-            </div>
-            <div>
-              <h2 class="service-detail__title" id="consult-heading">個別相談</h2>
-              <p style="opacity:.85;margin-top:6px;">オーダーメイドの作戦会議</p>
-            </div>
+        <div class="section-heading fade-in">
+          <p class="section-heading__label">Service 01</p>
+          <h2 class="section-heading__title">個別相談</h2>
+          <div class="section-heading__line" aria-hidden="true"></div>
+        </div>
+
+        <div class="service-detail-block fade-in fade-in-delay-1">
+          <div class="service-detail-block__header">
+            <span class="service-detail-block__emoji" aria-hidden="true">&#x1F4AC;</span>
+            <h3 class="service-detail-block__title">あなたの状況をじっくり聴かせてください</h3>
           </div>
-          <div class="service-detail__body">
-            <p style="color:var(--color-text-lt);margin-bottom:24px;line-height:1.9;">
-              家計もキャリアも、あなたの状況はほかの誰とも違います。だからこそ、マニュアルではなく完全オーダーメイドで、今のあなたに必要な「次の一手」を一緒に考えます。
-            </p>
+          <div class="service-detail-block__body">
+            <p>家計のこと、キャリアのこと、どちらか一方でも両方でも大丈夫。まずはあなたの現状をお聴きして、一緒にこれからのプランを考えます。</p>
 
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:28px;">
-              <div class="price-badge">
-                <div>
-                  <p class="price-badge__label">初回相談</p>
-                  <p class="price-badge__value">無料</p>
-                  <p class="price-badge__note">60分・オンライン対応</p>
+            <h4>ご相談の流れ</h4>
+            <ol class="flow">
+              <li class="flow__item">
+                <div class="flow__num">STEP 1</div>
+                <div class="flow__content">
+                  <strong>お申し込み</strong>
+                  <p>フォームまたはLINEからお気軽にご連絡ください。初回は無料です。</p>
                 </div>
-              </div>
-              <div class="price-badge">
-                <div>
-                  <p class="price-badge__label">2回目以降</p>
-                  <p class="price-badge__value">¥11,000〜</p>
-                  <p class="price-badge__note">税込・内容により変動</p>
+              </li>
+              <li class="flow__item">
+                <div class="flow__num">STEP 2</div>
+                <div class="flow__content">
+                  <strong>ヒアリング</strong>
+                  <p>現在の家計状況、キャリアの悩み、将来の希望などをお聴きします。（約60分）</p>
                 </div>
-              </div>
-            </div>
+              </li>
+              <li class="flow__item">
+                <div class="flow__num">STEP 3</div>
+                <div class="flow__content">
+                  <strong>ライフプラン作成</strong>
+                  <p>ヒアリング内容をもとに、あなたの状況に合わせたライフプランを作成します。</p>
+                </div>
+              </li>
+              <li class="flow__item">
+                <div class="flow__num">STEP 4</div>
+                <div class="flow__content">
+                  <strong>アクションプラン提案</strong>
+                  <p>「明日から何をすればいいか」が明確になる、具体的なアクションプランをお渡しします。</p>
+                </div>
+              </li>
+            </ol>
 
-            <h3 style="font-size:1.1rem;margin-bottom:16px;">こんな方にお勧めです</h3>
-            <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:28px;">
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--color-text-lt);">
-                <i class="fa-solid fa-circle-check" style="color:var(--color-primary);margin-top:3px;" aria-hidden="true"></i>
-                家計の見直しとキャリアチェンジを同時に考えたい
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--color-text-lt);">
-                <i class="fa-solid fa-circle-check" style="color:var(--color-primary);margin-top:3px;" aria-hidden="true"></i>
-                老後資金・教育費・住宅ローンのバランスに悩んでいる
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--color-text-lt);">
-                <i class="fa-solid fa-circle-check" style="color:var(--color-primary);margin-top:3px;" aria-hidden="true"></i>
-                転職・独立・副業を検討中で、お金の見通しが必要
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--color-text-lt);">
-                <i class="fa-solid fa-circle-check" style="color:var(--color-primary);margin-top:3px;" aria-hidden="true"></i>
-                「なんとなく不安」の正体を一緒に整理したい
-              </li>
+            <h4>こんな方におすすめ</h4>
+            <ul class="fit-card__list">
+              <li class="fit-card__item">家計の現状を把握したい</li>
+              <li class="fit-card__item">貯金の仕組みを作りたい</li>
+              <li class="fit-card__item">転職・育休・退職など転機を迎えている</li>
+              <li class="fit-card__item">老後・教育費が心配</li>
+              <li class="fit-card__item">まず話を聴いてほしい</li>
             </ul>
 
-            <h3 style="font-size:1.1rem;margin-bottom:16px;">ご相談の流れ</h3>
-            <div class="service-flow" aria-label="相談の流れ">
-              <div class="service-flow__item">
-                <div class="service-flow__num" aria-label="ステップ1">1</div>
-                <div class="service-flow__content">
-                  <h4>お問い合わせ・日程調整</h4>
-                  <p>お問い合わせフォームまたはSNSよりご連絡ください。希望日程を調整し、ZoomのURLをお送りします。</p>
-                </div>
-              </div>
-              <div class="service-flow__item">
-                <div class="service-flow__num" aria-label="ステップ2">2</div>
-                <div class="service-flow__content">
-                  <h4>事前ヒアリングシートの記入</h4>
-                  <p>簡単なヒアリングシートにご記入いただきます（5〜10分程度）。当日の時間を有効活用するためです。</p>
-                </div>
-              </div>
-              <div class="service-flow__item">
-                <div class="service-flow__num" aria-label="ステップ3">3</div>
-                <div class="service-flow__content">
-                  <h4>初回無料相談（60分）</h4>
-                  <p>現状の整理と、あなたの「ありたい姿」の確認から始めます。お金とキャリア、両面から一緒に考えます。</p>
-                </div>
-              </div>
-              <div class="service-flow__item">
-                <div class="service-flow__num" aria-label="ステップ4">4</div>
-                <div class="service-flow__content">
-                  <h4>プランのご提案・継続サポート</h4>
-                  <p>必要に応じて、具体的なライフプランや次のアクションプランをご提案します。継続サポートも対応可能です。</p>
-                </div>
-              </div>
+            <h4>料金</h4>
+            <div class="price-box">
+              <p class="price-box__item">初回相談：<strong>無料</strong>（約60分）</p>
+              <p class="price-box__item">2回目以降：<strong>※料金は別途ご案内</strong></p>
+              <p class="price-box__note">オンライン（Zoom）対応・全国からお申し込み可能です。</p>
             </div>
 
-            <div style="text-align:center;margin-top:8px;">
-              <a href="contact.html" class="btn btn--primary btn--lg">
-                <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
-                初回無料相談を予約する
-              </a>
+            <div class="service-cta">
+              <a href="contact.html" class="btn btn-primary btn--lg">無料相談を予約する</a>
             </div>
           </div>
         </div>
+
       </div>
     </section>
-
-    <!-- ===== SERVICE 2: COURSE ===== -->
-    <section class="section" id="course" aria-labelledby="course-heading">
+    <!-- SERVICE 2: COURSE -->
+    <section class="section section--sub" id="course">
       <div class="container">
-        <div class="service-detail service-detail--accent fade-up">
-          <div class="service-detail__header">
-            <div class="service-detail__icon" aria-hidden="true">
-              <i class="fa-solid fa-book-open"></i>
-            </div>
-            <div>
-              <h2 class="service-detail__title" id="course-heading">家計整理アドバイザー2級講座</h2>
-              <p style="opacity:.85;margin-top:6px;">お金の整理術を、資格とともに身につける</p>
-            </div>
-          </div>
-          <div class="service-detail__body">
-            <p style="color:var(--color-text-lt);margin-bottom:24px;line-height:1.9;">
-              家計整理アドバイザー2級は、家計の「見える化」を実践的に学べる資格です。受講しながら自分の家計も整理できるので、学びながら生活がラクになります。資格取得後は、周りのお金の悩みを持つ方へのサポートもできるようになります。
-            </p>
-
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px;">
-              <div class="price-badge">
-                <div>
-                  <p class="price-badge__label">受講料</p>
-                  <p class="price-badge__value">¥55,000</p>
-                  <p class="price-badge__note">税込・テキスト代別途</p>
-                </div>
-              </div>
-              <div class="price-badge">
-                <div>
-                  <p class="price-badge__label">期間</p>
-                  <p class="price-badge__value">全5回</p>
-                  <p class="price-badge__note">月1〜2回・各90分</p>
-                </div>
-              </div>
-              <div class="price-badge">
-                <div>
-                  <p class="price-badge__label">形式</p>
-                  <p class="price-badge__value">少人数</p>
-                  <p class="price-badge__note">4名まで・オンライン</p>
-                </div>
-              </div>
-            </div>
-
-            <h3 style="font-size:1.1rem;margin-bottom:16px;">カリキュラム</h3>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:28px;">
-              <div style="background:var(--color-bg-alt);border-radius:var(--radius-sm);padding:16px;">
-                <p style="font-size:.8rem;color:var(--color-accent);font-weight:500;margin-bottom:6px;">第1回</p>
-                <p style="font-weight:500;margin-bottom:4px;">家計の全体像を把握する</p>
-                <p style="font-size:.85rem;color:var(--color-text-lt);">収入・支出の棚卸し、家計の見える化のコツ</p>
-              </div>
-              <div style="background:var(--color-bg-alt);border-radius:var(--radius-sm);padding:16px;">
-                <p style="font-size:.8rem;color:var(--color-accent);font-weight:500;margin-bottom:6px;">第2回</p>
-                <p style="font-weight:500;margin-bottom:4px;">固定費・変動費の整理</p>
-                <p style="font-size:.85rem;color:var(--color-text-lt);">削れる固定費の見つけ方、保険の見直し</p>
-              </div>
-              <div style="background:var(--color-bg-alt);border-radius:var(--radius-sm);padding:16px;">
-                <p style="font-size:.8rem;color:var(--color-accent);font-weight:500;margin-bottom:6px;">第3回</p>
-                <p style="font-weight:500;margin-bottom:4px;">貯める仕組みをつくる</p>
-                <p style="font-size:.85rem;color:var(--color-text-lt);">先取り貯蓄・自動積立の設定方法</p>
-              </div>
-              <div style="background:var(--color-bg-alt);border-radius:var(--radius-sm);padding:16px;">
-                <p style="font-size:.8rem;color:var(--color-accent);font-weight:500;margin-bottom:6px;">第4回</p>
-                <p style="font-weight:500;margin-bottom:4px;">ライフイベントと資金計画</p>
-                <p style="font-size:.85rem;color:var(--color-text-lt);">教育費・老後資金・住宅ローンの考え方</p>
-              </div>
-              <div style="background:var(--color-bg-alt);border-radius:var(--radius-sm);padding:16px;">
-                <p style="font-size:.8rem;color:var(--color-accent);font-weight:500;margin-bottom:6px;">第5回</p>
-                <p style="font-weight:500;margin-bottom:4px;">実践と資格取得サポート</p>
-                <p style="font-size:.85rem;color:var(--color-text-lt);">試験対策・実践的なアドバイス方法</p>
-              </div>
-            </div>
-
-            <div style="text-align:center;">
-              <a href="contact.html" class="btn btn--accent btn--lg">
-                <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
-                受講について相談する
-              </a>
-            </div>
-          </div>
+        <div class="section-heading fade-in">
+          <p class="section-heading__label">Service 02</p>
+          <h2 class="section-heading__title">家計整理アドバイザー2級講座</h2>
+          <div class="section-heading__line" aria-hidden="true"></div>
         </div>
-      </div>
-    </section>
 
-    <!-- ===== SERVICE 3: SEMINAR ===== -->
-    <section class="section section--alt" id="seminar" aria-labelledby="seminar-heading">
-      <div class="container">
-        <div class="service-detail fade-up">
-          <div class="service-detail__header">
-            <div class="service-detail__icon" aria-hidden="true">
-              <i class="fa-solid fa-users"></i>
-            </div>
-            <div>
-              <h2 class="service-detail__title" id="seminar-heading">各種セミナー</h2>
-              <p style="opacity:.85;margin-top:6px;">仲間と見つける「自分らしさ」</p>
-            </div>
+        <div class="service-detail-block service-detail-block--green fade-in fade-in-delay-1">
+          <div class="service-detail-block__header service-detail-block__header--green">
+            <span class="service-detail-block__emoji" aria-hidden="true">&#x1F4DA;</span>
+            <h3 class="service-detail-block__title">家計を整える「知識」と「習慣」を身につける</h3>
           </div>
-          <div class="service-detail__body">
-            <p style="color:var(--color-text-lt);margin-bottom:24px;line-height:1.9;">
-              同じ悩みを持つ仲間と一緒に学ぶグループ形式のセミナーです。一人では気づけなかった視点が、仲間との対話から生まれます。セミナーの内容は、参加者のニーズに合わせて企画しています。
-            </p>
+          <div class="service-detail-block__body">
+            <p>「家計整理アドバイザー」は、家計を整える専門知識を体系的に学べる資格講座です。自分のために学ぶだけでなく、将来的に人に教える資格としても活用できます。</p>
 
-            <div style="background:var(--color-bg-alt);border-radius:var(--radius-md);padding:28px;margin-bottom:28px;text-align:center;">
-              <i class="fa-solid fa-calendar-xmark" style="font-size:2.5rem;color:var(--color-primary-lt);margin-bottom:16px;" aria-hidden="true"></i>
-              <p style="font-family:var(--font-serif);font-size:1.1rem;margin-bottom:8px;">次回セミナー：準備中</p>
-              <p style="font-size:.9rem;color:var(--color-text-lt);">
-                次回開催の情報は、SNSやメルマガにてご案内します。<br>
-                お知らせを受け取りたい方は、お問い合わせよりご登録ください。
-              </p>
-              <div style="margin-top:20px;">
-                <a href="contact.html" class="btn btn--outline-dark">
-                  お知らせを受け取る
-                </a>
-              </div>
-            </div>
-
-            <h3 style="font-size:1.1rem;margin-bottom:16px;">過去のセミナーテーマ</h3>
-            <ul style="display:flex;flex-direction:column;gap:12px;">
-              <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:var(--color-text-lt);">
-                <i class="fa-solid fa-circle-dot" style="color:var(--color-primary);margin-top:4px;" aria-hidden="true"></i>
-                「40代からの家計リセット〜老後を怖くなくするお金の整理術〜」
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:var(--color-text-lt);">
-                <i class="fa-solid fa-circle-dot" style="color:var(--color-primary);margin-top:4px;" aria-hidden="true"></i>
-                「働き方を変えたいあなたへ〜お金の不安を取り除くキャリア設計〜」
-              </li>
-              <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:var(--color-text-lt);">
-                <i class="fa-solid fa-circle-dot" style="color:var(--color-primary);margin-top:4px;" aria-hidden="true"></i>
-                「やりたいことの見つけ方〜キャリアの棚卸しワークショップ〜」
-              </li>
+            <h4>受講で得られること</h4>
+            <ul class="fit-card__list">
+              <li class="fit-card__item">家計の全体像を把握する「仕分け術」が身につく</li>
+              <li class="fit-card__item">固定費・変動費の最適化で自然と貯まる仕組みができる</li>
+              <li class="fit-card__item">家計整理アドバイザー2級の資格を取得できる</li>
             </ul>
+
+            <h4>講座の特徴</h4>
+            <ul class="fit-card__list">
+              <li class="fit-card__item">オンライン受講で全国どこからでも参加可能</li>
+              <li class="fit-card__item">少人数制で質問しやすい環境</li>
+              <li class="fit-card__item">FP・キャリコン資格保有者が丁寧に解説</li>
+              <li class="fit-card__item">受講後のフォローアップあり</li>
+            </ul>
+
+            <h4>こんな方におすすめ</h4>
+            <ul class="fit-card__list">
+              <li class="fit-card__item">家計管理の基礎から学びたい方</li>
+              <li class="fit-card__item">資格として証明書がほしい方</li>
+              <li class="fit-card__item">将来、家計相談を仕事にしたい方</li>
+              <li class="fit-card__item">グループで一緒に学びたい方</li>
+            </ul>
+
+            <h4>料金・日程</h4>
+            <div class="price-box">
+              <p class="price-box__item">受講料：<strong>※料金は別途ご案内</strong></p>
+              <p class="price-box__item">日程：<strong>※次回開催日は順次更新予定</strong></p>
+              <p class="price-box__note">開催情報はメルマガ・SNSでお知らせします。</p>
+            </div>
+
+            <div class="service-cta">
+              <a href="contact.html" class="btn btn-primary btn--lg">講座について問い合わせる</a>
+            </div>
           </div>
         </div>
+
+      </div>
+    </section>
+    <!-- SERVICE 3: SEMINAR -->
+    <section class="section" id="seminar">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <p class="section-heading__label">Service 03</p>
+          <h2 class="section-heading__title">グループセミナー</h2>
+          <div class="section-heading__line" aria-hidden="true"></div>
+        </div>
+
+        <div class="service-detail-block fade-in fade-in-delay-1">
+          <div class="service-detail-block__header">
+            <span class="service-detail-block__emoji" aria-hidden="true">&#x1F465;</span>
+            <h3 class="service-detail-block__title">みんなで学ぶ、お金とキャリアのセミナー</h3>
+          </div>
+          <div class="service-detail-block__body">
+
+            <div class="coming-soon-banner">
+              <p class="coming-soon-banner__icon" aria-hidden="true">&#x1F6A7;</p>
+              <p class="coming-soon-banner__title">準備中</p>
+              <p class="coming-soon-banner__text">グループセミナーは現在準備中です。開催が決まり次第、メルマガ・SNSにてお知らせします。</p>
+            </div>
+
+            <h4>メール登録でお知らせを受け取る</h4>
+            <p>セミナー開催情報をいち早くお届けします。以下よりメールアドレスをご登録ください。</p>
+            <div class="service-cta">
+              <a href="contact.html" class="btn btn-outline btn--lg">開催通知を受け取る</a>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
+    <!-- COMPARISON TABLE -->
+    <section class="section section--sub" id="compare">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <p class="section-heading__label">Compare</p>
+          <h2 class="section-heading__title">サービス比較表</h2>
+          <div class="section-heading__line" aria-hidden="true"></div>
+        </div>
+        <div class="fade-in fade-in-delay-1" style="overflow-x:auto;">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>&#x1F4AC; 個別相談</th>
+                <th>&#x1F4DA; 講座</th>
+                <th>&#x1F465; セミナー</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>対象</strong></td>
+                <td>個人・お一人おひとり</td>
+                <td>受講希望者（個人）</td>
+                <td>グループ・複数名</td>
+              </tr>
+              <tr>
+                <td><strong>形式</strong></td>
+                <td>マンツーマン・オンライン</td>
+                <td>少人数制・オンライン</td>
+                <td>グループ・オンライン</td>
+              </tr>
+              <tr>
+                <td><strong>こんな方に</strong></td>
+                <td>個別の悩みを解決したい方</td>
+                <td>体系的に学んで資格を取りたい方</td>
+                <td>仲間と一緒に学びたい方</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
     <!-- FAQ -->
-    <section class="section" aria-labelledby="faq-heading">
-      <div class="container" style="max-width:720px;">
-        <div class="section-heading fade-up">
-          <span class="section-heading__label">FAQ</span>
-          <h2 class="section-heading__title" id="faq-heading">よくあるご質問</h2>
-          <span class="section-heading__line" aria-hidden="true"></span>
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-heading fade-in">
+          <p class="section-heading__label">FAQ</p>
+          <h2 class="section-heading__title">よくあるご質問</h2>
+          <div class="section-heading__line" aria-hidden="true"></div>
         </div>
 
-        <div class="faq fade-up">
+        <div class="faq fade-in fade-in-delay-1">
+
           <details class="faq__item">
-            <summary class="faq__question">初回無料相談では、どんなことが決まりますか？</summary>
-            <p class="faq__answer">現状の整理と課題の明確化が主な目的です。「今、何が不安なのか」「どんな未来を目指したいのか」を一緒に確認します。具体的なプランや数字の分析は、2回目以降にじっくり行います。</p>
+            <summary class="faq__question"><span class="faq__q-label">Q</span>オンラインでも相談できますか？</summary>
+            <div class="faq__answer">
+              <p>はい、すべてのサービスがオンライン（Zoom）で対応しています。全国どこからでもご相談いただけます。スマートフォンからもご参加可能です。</p>
+            </div>
           </details>
+
           <details class="faq__item">
-            <summary class="faq__question">オンラインのみですか？対面でも相談できますか？</summary>
-            <p class="faq__answer">基本的にはZoomを使ったオンライン相談です。対面については個別にご相談ください（エリアにより対応可能な場合があります）。</p>
+            <summary class="faq__question"><span class="faq__q-label">Q</span>お金の知識がなくても大丈夫ですか？</summary>
+            <div class="faq__answer">
+              <p>まったく問題ありません。「家計簿をつけたことがない」「投資って何？」という状態からでも、わかりやすい言葉でご説明します。専門用語は使いません。</p>
+            </div>
           </details>
+
           <details class="faq__item">
-            <summary class="faq__question">FP相談とキャリア相談は別々に受けることはできますか？</summary>
-            <p class="faq__answer">もちろん可能です。「家計だけ見てほしい」「キャリアだけ話を聞いてほしい」というご要望にも対応します。ただ、両方を同時に見ることで本質的な解決策が見えやすくなるため、最初は両方の視点でお話を聞くことをお勧めしています。</p>
+            <summary class="faq__question"><span class="faq__q-label">Q</span>無理な商品の勧誘はありませんか？</summary>
+            <div class="faq__answer">
+              <p>一切ありません。私は特定の金融機関・保険会社とは提携しておらず、中立の立場からアドバイスをお伝えしています。ご安心ください。</p>
+            </div>
           </details>
+
           <details class="faq__item">
-            <summary class="faq__question">相談内容は秘密にしてもらえますか？</summary>
-            <p class="faq__answer">もちろんです。ご相談いただいた内容は厳重に管理し、ご本人の同意なく第三者に開示することは一切ありません。安心してご相談ください。</p>
+            <summary class="faq__question"><span class="faq__q-label">Q</span>相談前に準備するものはありますか？</summary>
+            <div class="faq__answer">
+              <p>可能であれば、直近1〜3か月の家計の収支（おおよそで構いません）と、現在の貯蓄額をご確認いただくと、より具体的なアドバイスができます。ただし、準備がなくても相談は可能です。</p>
+            </div>
           </details>
+
           <details class="faq__item">
-            <summary class="faq__question">具体的な数字（家計の収支など）を出さないといけませんか？</summary>
-            <p class="faq__answer">初回は大まかな状況を教えていただければ十分です。「正確な数字がわからない」という方も、まずは現状の整理から一緒に始めましょう。</p>
+            <summary class="faq__question"><span class="faq__q-label">Q</span>男性でも相談できますか？</summary>
+            <div class="faq__answer">
+              <p>はい、もちろんです。女性向けの情報発信が多めですが、男性・カップル・ご夫婦でのご相談も歓迎しています。どなたでもお気軽にお申し込みください。</p>
+            </div>
           </details>
+
         </div>
       </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final-cta" aria-labelledby="services-cta-heading">
-      <div class="final-cta__inner fade-up">
-        <span class="final-cta__label">First Step</span>
-        <h2 class="final-cta__title" id="services-cta-heading">まず、話してみませんか？</h2>
-        <p class="final-cta__desc">初回相談は無料です。「こんな悩みで相談していいの？」と思う必要はありません。モヤモヤを言葉にするだけでも、一歩前に進めます。</p>
-        <div class="final-cta__btns">
-          <a href="contact.html" class="btn btn--accent btn--lg">
-            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
-            無料相談を予約する
-          </a>
+    <section class="cta-section" id="cta">
+      <div class="cta-section__inner container">
+        <p class="cta-section__eyebrow">First Step</p>
+        <h2 class="cta-section__title">迷っていたら、まず話してみませんか？</h2>
+        <p class="cta-section__body">初回相談は無料。「どのサービスが合うかわからない」という状態でも大丈夫です。一緒に考えましょう。</p>
+        <div class="cta-section__btns">
+          <a href="contact.html" class="btn btn-primary btn--lg">無料相談を予約する</a>
+          <a href="about.html" class="btn btn-outline btn--lg">プロフィールを見る</a>
         </div>
       </div>
     </section>
 
   </main>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer__inner container">
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer__inner">
       <div class="footer__brand">
-        <div>
-          <div class="footer__logo-main">money web</div>
-          <div class="footer__logo-sub">FP &amp; Career Consultant</div>
-        </div>
-        <p>渡辺かなこ（FP＆国家資格キャリアコンサルタント）による<br>お金とキャリアの伴走サポートサービスです。</p>
-        <div class="footer__sns" aria-label="SNSリンク">
+        <p class="footer__logo-name">money web</p>
+        <p class="footer__logo-sub">お金とキャリアの伴走プランナー</p>
+        <p class="footer__brand-desc">渡辺加奈子が、あなたのお金とキャリアの悩みに寄り添います。初回相談無料・全国オンライン対応。</p>
+        <div class="footer__sns">
           <a href="#" class="footer__sns-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" class="footer__sns-link" aria-label="X（旧Twitter）"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-          <a href="#" class="footer__sns-link" aria-label="note"><i class="fa-solid fa-n" aria-hidden="true"></i></a>
+          <a href="#" class="footer__sns-link" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" class="footer__sns-link" aria-label="LINE"><i class="fa-brands fa-line" aria-hidden="true"></i></a>
         </div>
       </div>
-      <nav aria-label="サービスナビ">
-        <p class="footer__col-title">Services</p>
-        <ul class="footer__links">
-          <li><a href="services.html#consultation">個別相談</a></li>
-          <li><a href="services.html#course">家計整理アドバイザー講座</a></li>
-          <li><a href="services.html#seminar">各種セミナー</a></li>
-        </ul>
-      </nav>
-      <nav aria-label="サイトナビ">
-        <p class="footer__col-title">Navigation</p>
+
+      <div class="footer__col">
+        <p class="footer__col-title">サイトメニュー</p>
         <ul class="footer__links">
           <li><a href="index.html">ホーム</a></li>
           <li><a href="about.html">プロフィール</a></li>
+          <li><a href="services.html">サービス一覧</a></li>
+          <li><a href="results.html">実績・お客様の声</a></li>
           <li><a href="blog.html">ブログ</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
-      </nav>
-      <nav aria-label="法的ナビ">
-        <p class="footer__col-title">Legal</p>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">サービス</p>
         <ul class="footer__links">
-          <li><a href="privacy.html">プライバシーポリシー</a></li>
-          <li><a href="legal.html">特定商取引法に基づく表記</a></li>
-          <li><a href="sitemap.html">サイトマップ</a></li>
+          <li><a href="services.html#consultation">個別相談（初回無料）</a></li>
+          <li><a href="services.html#course">家計整理アドバイザー講座</a></li>
+          <li><a href="services.html#seminar">グループセミナー</a></li>
         </ul>
-      </nav>
+      </div>
+
+      <div class="footer__col">
+        <p class="footer__col-title">法的情報</p>
+        <ul class="footer__links">
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">特定商取引法に基づく表記</a></li>
+          <li><a href="#">免責事項</a></li>
+        </ul>
+      </div>
+
     </div>
-    <p class="footer__bottom">&copy; 2024 money web / 渡辺かなこ. All rights reserved.</p>
+    <div class="footer__bottom">
+      <p>&copy; 2024 渡辺加奈子 / money web. All rights reserved.</p>
+    </div>
   </footer>
 
-  <button class="back-to-top" aria-label="ページトップへ戻る">
+  <button class="back-to-top" aria-label="ページトップへ戻る" id="backToTop">
     <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
   </button>
+
   <script src="js/main.js"></script>
 </body>
 </html>
