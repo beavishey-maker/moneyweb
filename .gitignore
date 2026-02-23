@@ -1,0 +1,36 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Node / build tools
+node_modules/
+dist/
+.cache/
+
+# Environment & secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code local settings (contains IDE configs, not for repo)
+.claude/
+
+# Sensitive local files
+files/
