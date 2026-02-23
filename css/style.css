@@ -698,7 +698,7 @@ select.form-control {
   max-width: 480px;
 }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 14px; }
-.hero__photo-wrap { order: -1; text-align: center; }
+.hero__photo-wrap { text-align: center; }
 @media (min-width: 768px) { .hero__photo-wrap { order: 0; } }
 .hero__photo {
   width: 240px; height: 240px;
